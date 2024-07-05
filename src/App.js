@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navigation from "./compoenents/Header/Navigation";
+import Home from "./compoenents/Home/Home";
+import { motion } from "framer-motion";
 
 function App() {
+  const itemVariants = {
+    hidden: { opacity: 0},
+    visible: {
+      opacity: 1,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+
   return (
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+      >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Navigate to={"/Home"} />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Skiils" element={<Home />} />
+        </Routes>
     </div>
+      </motion.div>
   );
 }
 

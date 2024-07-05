@@ -1,0 +1,153 @@
+.HomeChatBot {
+  position: relative;
+  width: 90%;
+  margin: 170px auto;
+  height: 500px;
+  /* background: #000; */
+}
+
+.HomeChatBot h4 {
+  font-size: 1.7rem;
+  margin: 20px 0;
+}
+.chat-box {
+  background: var(--background-cart);
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.chat-box .bot_message {
+  max-width: 70%;
+  display: flex;
+  gap: 10px;
+}
+.chat-box .bot_message span {
+  align-self: flex-end;
+  color: gray;
+}
+.chat-box .bot_message p {
+  text-align: justify;
+  background: var(--bagckground-menu);
+  padding: 20px;
+  border-radius: 20px;
+}
+.chat-box .message {
+  max-width: 70%;
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-box .message p {
+  text-align: justify;
+  direction: rtl;
+  background: var(--background-cart);
+  padding: 20px;
+  border-radius: 20px;
+}
+.chat-box .message span {
+  align-self: flex-end;
+  color: gray;
+}
+
+.chat-header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  background: var(--background-cart);
+  border-radius: 10px 10px 0px 0px;
+  backdrop-filter: blur(10px);
+  gap: 10px;
+  padding: 20px;
+  border-bottom: 2px solid var(--text-color);
+}
+
+.chat-box img,
+.chat-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.chat-header > span {
+  font-size: 0.8rem;
+  color: greenyellow;
+  position: relative;
+}
+#onlineDot {
+  width: 10px;
+  height: 10px;
+  background: rgb(47, 255, 116);
+  position: absolute;
+  top: 0;
+  right: -13px;
+  border-radius: 50%;
+}
+.chat-header .icon {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2rem;
+}
+.input-box {
+  width: 100%;
+  display: flex;
+  border-radius: 0px 0px 10px 10px;
+  border-top: 2px solid var(--text-color);
+  background: var(--background-cart);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+}
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.input-box button {
+  width: 100px;
+  background: rgb(0, 224, 255);
+  background: linear-gradient(
+    130deg,
+    rgba(0, 224, 255, 1) 0%,
+    rgba(196, 0, 255, 1) 100%
+  );
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+}
+.Frequently {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+
+  color: rgb(141, 141, 141);
+  background: var(--background-cart);
+  backdrop-filter: blur(20px);
+  padding: 15px;
+  gap: 10px;
+}
+.question-box {
+  overflow-y: auto;
+  color: aliceblue;
+  display: flex;
+  width: 70%;
+  gap: 20px;
+}
+.question-box .question {
+  padding: 5px 10px;
+  border: 1px solid var(--background-cart);
+  border-radius: 5px;
+  cursor: pointer;
+}

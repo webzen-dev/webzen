@@ -1,0 +1,68 @@
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 50px;
+  gap: 20px;
+  position: fixed;
+  z-index: 122;
+  justify-content: space-between;
+}
+.bg-menu {
+}
+.menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--bagckground-menu);
+  backdrop-filter: blur(10px);
+  gap: 14px;
+}
+header ul {
+  border-right: 2px solid var(--text-color);
+  display: flex;
+  gap: 10px;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 14px;
+}
+header li a {
+  font-size: 1.4rem;
+  font-weight: 100;
+  border-radius: 10px;
+  color: var(--text-color);
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header li a.active {
+  color: var(--text-color2);
+  background: var(--background-gradiant-button);
+}
+header .logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+.logo {
+  color: var(--text-color);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+#DarkMode {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: var(--color4);
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}

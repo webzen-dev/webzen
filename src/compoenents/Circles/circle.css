@@ -1,0 +1,194 @@
+.LargestCircle {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: #77dfff;
+  border-radius: 50%;
+  top: -30%;
+  right: -20%;
+  filter: blur(10px);
+  box-shadow: 0px 0px 300px rgb(0, 238, 255);
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  border: 10px solid #eee;
+  align-items: center;
+  animation: 10s infinite ease-in-out circle;
+}
+.LargestCircle .baby {
+  width: 230px;
+  height: 230px;
+  background: var(--circle-baby);
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 110px #eee;
+  filter: blur(30px);
+  display: none;
+}
+.SmallCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #ff00006c;
+  border-radius: 50%;
+  box-shadow: 0px 0px 300px red;
+  top: 40%;
+  left: -50px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(10px);
+  animation: 10s infinite ease-in-out circle2;
+}
+
+.SmallCircle .baby {
+  width: 100px;
+  height: 100px;
+  background: var(--circle-baby);
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 110px #eee;
+  filter: blur(30px);
+  display: none;
+}
+.MediumCircle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #ffee00;
+  border-radius: 50%;
+  top: 80%;
+  right: 20%;
+  filter: blur(10px);
+  box-shadow: 0px 0px 300px rgb(255, 208, 0);
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 10s infinite ease-in-out circle3;
+}
+.MediumCircleGreen {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #00ff55;
+  border-radius: 50%;
+  top: 150%;
+  left: 1%;
+  filter: blur(10px);
+  box-shadow: 0px 0px 300px #00ff55;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SmallCircleCyan {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #008cff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 300px #00ffff;
+  top: 50px;
+  left: -10%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(10px);
+}
+.LargestCirclePurple {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: #8077ff;
+  border-radius: 50%;
+  top: -70%;
+  right: -30%;
+  filter: blur(10px);
+  box-shadow: 0px 0px 300px #8077ff;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.MediumCircleOrang{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #ff5e00;
+  border-radius: 50%;
+  right: 1%;
+  bottom: 20%;
+  filter: blur(10px);
+  box-shadow: 0px 0px 300px #ff5e00;
+  z-index: -1;
+
+}
+
+.SmallCirclePink{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #ff00ff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 300px #ff00ff;
+  top: 80%;
+  left: 10%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(10px);
+}
+
+
+
+
+
+
+@keyframes circle {
+  0% {
+    background: #77dfff;
+    box-shadow: 0px 0px 300px #77dfff;
+  }
+  50% {
+    background: #96ffb9;
+    box-shadow: 0px 0px 300px #00ff55;
+  }
+  100% {
+    background: #77dfff;
+    box-shadow: 0px 0px 300px #77dfff;
+  }
+}
+@keyframes circle2 {
+  0% {
+    background: #ff00006c;
+    box-shadow: 0px 0px 300px #ff00006c;
+  }
+  50% {
+    background: #f8004a;
+    box-shadow: 0px 0px 300px #f8004a;
+  }
+  100% {
+    background: #ff00006c;
+    box-shadow: 0px 0px 300px #ff00006c;
+  }
+}
+@keyframes circle3 {
+  0% {
+    background: #ffee00;
+    box-shadow: 0px 0px 300px #ffee00;
+  }
+  50% {
+    background: #ff8800;
+    box-shadow: 0px 0px 300px #ff8800;
+  }
+  100% {
+    background: #ffee00;
+    box-shadow: 0px 0px 300px #ffee00;
+  }
+}

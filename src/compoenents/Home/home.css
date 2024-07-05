@@ -1,0 +1,390 @@
+.home {
+  padding: 0 100px;
+}
+.HomeContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 90vh;
+}
+.text-box {
+  flex: 0.5;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.text-box h2 {
+  font-size: 2.2rem;
+}
+.text-box h2 span {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: var(--background-gradiant-button);
+  background-clip: text;
+  color: transparent;
+}
+.HomeContainer .text-box button {
+  width: 200px;
+  height: 40px;
+  display: block;
+  margin: 20px 100px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  color: var(--text-color);
+  box-shadow: 0px 0px 30px var(--text-color2);
+  cursor: pointer;
+  position: relative;
+}
+.Introducing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Introducing .text-box {
+  font-size: 1.2rem;
+}
+.Introducing .image-box img {
+  width: 400px;
+  border-radius: 20px;
+  height: 400px;
+  object-fit: cover;
+}
+.skills {
+  width: 70%;
+  /* margin: 50px auto; */
+  margin: 100px auto;
+}
+.skill-flex-box {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  justify-content: space-between;
+}
+.skill-flex-box .skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-flex-box .skill span {
+  font-size: 2.5rem;
+}
+.HomeIntroBlog {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.HomeIntroBlog .slider {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  gap: 30px;
+  height: 450px;
+}
+
+.HomeIntroBlog .slider .cart {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 20px;
+  height: 400px;
+  background: var(--background-cart);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 0px 20px var(--normal-shadow);
+}
+.HomeIntroBlog .slider .cart .image-box img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+}
+.HomeIntroBlog .blogBtn {
+  align-self: flex-end;
+}
+.HomeIntroBlog .blogBtn button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+}
+
+.HomeIntroBlog .slider .cart .caption {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.HomeIntroBlog .slider .cart .caption .details {
+  color: var(--text-color);
+}
+.HomeIntroBlog .slider .cart .caption .category {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+.HomeIntroBlog .slider .cart .btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.HomeIntroBlog .slider .cart .btn button {
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.205);
+  color: var(--text-color);
+  border: none;
+  background: #494949;
+}
+.HomeServices {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* height: 200px; */
+  width: 100%;
+  top: 50px;
+  /* flex-direction: row-reverse; */
+}
+.HomeServices .services {
+  flex: 0.5;
+}
+
+.HomeServices .services h3 {
+  font-size: 1.3rem;
+  padding: 10px;
+}
+.HomeServices .services p {
+  text-align: justify;
+  word-spacing: 1px;
+  line-height: 30px;
+  font-size: 1rem;
+}
+.HomeServices .services button {
+  width: 100%;
+  margin: 20px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+  background: var(--bagckground-menu);
+  backdrop-filter: blur(203px);
+  letter-spacing: 5px;
+}
+.HomeWhitePaper {
+  position: relative;
+  top: 100px;
+  align-items: center;
+  display: flex;
+  padding: 100px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.HomeWhitePaper div p {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+.HomeWhitePaper div button {
+  width: 100%;
+  padding: 10px;
+  background: rgb(0, 224, 255);
+  background: linear-gradient(
+    130deg,
+    rgba(0, 224, 255, 1) 0%,
+    rgba(196, 0, 255, 1) 100%
+  );
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  position: relative;
+}
+.HomeWhitePaper div button .caption {
+  position: absolute;
+  padding: 15px;
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 20px 0px 20px 20px;
+  right: 100%;
+  top: 130%;
+  width: 50%;
+}
+
+.HomeScoialMedia {
+  position: relative;
+  z-index: 11;
+  /* top: 10px; */
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+.HomeScoialMediaItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 50%;
+  margin: 30px auto;
+}
+.HomeScoialMediaItems .ScoialMediaItem a {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.HomeScoialMediaItems .ScoialMediaItem a svg {
+  font-size: 2.5rem;
+}
+@media screen and (min-width: 1500px) {
+  .home {
+    padding: 0 250px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .home {
+    padding: 0 50px;
+  }
+}
+button {
+  cursor: pointer;
+}
+
+.HomeSamples {
+  position: relative;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.HomeSamples h3 {
+  font-size: 1.7rem;
+}
+.HomeSamples .Samples {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.HomeSamples .Samples .SampleItem {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  align-items: center;
+  position: relative;
+  color: var(--text-color);
+}
+
+.HomeSamples .Samples .SampleItem .SampleItemImage {
+  position: relative;
+}
+.HomeSamples .Samples .SampleItem .SampleItemImage img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: blur(5px);
+  transition: all 300ms ease;
+  border: 4px solid rgb(0, 225, 255);
+}
+.HomeSamples .Samples .SampleItem .SampleItemImage img:hover {
+  filter: blur(0);
+}
+.HomeSamples .Samples .SampleItem .SampleItemCaption {
+  width: calc(100% / 3);
+  background: var(--body-background);
+}
+
+.SampleItemTitle {
+  text-align: start;
+  background: var(--body-background);
+}
+.HomeSamples .Samples .SampleItem .lineItem {
+  position: absolute;
+  width: 70%;
+  z-index: -1;
+  height: 2px;
+  background: rgb(0, 225, 255);
+}
+.Line {
+  width: 3px;
+  height: 500px;
+  top: 70px;
+  background: red;
+  position: absolute;
+}
+.HomeSamples .Samples .SampleItem .leftSpan {
+  position: absolute;
+  bottom: 140px;
+  left: -50px;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.HomeSamples .Samples .SampleItem .rightSpan {
+  bottom: 140px;
+  right: -50px;
+  position: absolute;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomeFooter {
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--body-background);
+  display: flex;
+  position: relative;
+  bottom: 0;
+  border-radius: 10px 10px 0px 0px;
+  margin-top: 50px;
+}
+.leftSideFooter img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.leftSideFooter {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+.rightSideFoooter {
+  font-size: 1.4rem;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.rightSideFoooter svg {
+  font-size: 2rem;
+}
