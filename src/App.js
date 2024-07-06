@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function App() {
   const itemVariants = {
-    hidden: { opacity: 0},
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { duration: 1, ease: "easeOut" },
@@ -14,20 +14,16 @@ function App() {
   };
 
   return (
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-      >
-    <div className="App">
+    <motion.div variants={itemVariants} initial="hidden" whileInView="visible">
+      <div className="App">
         <Navigation />
         <Routes>
           <Route path="/" element={<Navigate to={"/Home"} />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Skiils" element={<Home />} />
         </Routes>
-    </div>
-      </motion.div>
+      </div>
+    </motion.div>
   );
 }
 

@@ -1,94 +1,96 @@
 import { CiCircleInfo } from "react-icons/ci";
 import "./chat.css";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
 import SmallCirclePink from "../../Circles/SmallCirclePink";
 import MediumCircleOrang from "../../Circles/MediumCircleOrang";
+import axios from "axios";
 
 const HomeChatBot = () => {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 2, ease: "easeInOut" },
-    },
-  };
-  const [isTyping, setIsTyping] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
+  const [qaList, setQaList] = useState([]);
 
   useEffect(() => {
-    setIsTyping(false);
-    return setIsTyping(true);
-  }, [isTyping]);
+    // Load the questions and answers from the text file
+    axios.get('questions_answers.txt')
+      .then(response => {
+        const qaArray = response.data.split('\n\n').map(qa => {
+          const [question, answer] = qa.split('\n');
+          return { question, answer };
+        });
+        setQaList(qaArray);
+      })
+      .catch(error => {
+        console.error("Error loading questions and answers:", error);
+      });
+  }, []);
+
+  const handleSend = () => {
+    if (input.trim() === "") return;
+
+    const userMessage = { text: input, sender: "user" };
+    setMessages([...messages, userMessage]);
+
+    const botResponse = qaList.find(qa => qa.question.toLowerCase() === input.toLowerCase());
+    const botMessage = {
+      text: botResponse ? botResponse.answer : "لطفا سوالاتون بهتر بپرسید",
+      sender: "bot"
+    };
+
+    setMessages([...messages, userMessage, botMessage]);
+    setInput("");
+  };
 
   return (
     <motion.div
-      variants={itemVariants}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: 2, ease: "easeInOut" } }}
       style={{ marginBottom: 20 }}
     >
       <div className="HomeChatBot">
         <h4>Webzen chat Bot</h4>
         <div className="chat-header">
-          <img src="./logo.png" alt="" />
-          WEBZEN-GPT{" "}
+          <img src="./logo.png" alt="logo" />
+          WEBZEN-GPT
           <span>
             online <div id="onlineDot"></div>
           </span>
           <div className="icon">
-            {" "}
             <CiCircleInfo />
           </div>
         </div>
         <div className="chat-box">
-          <div className="bot_message">
-            <img src="./logo.png" alt="" />
-            <p>
-              {" "}
-              {isTyping && (
-                <TypeAnimation
-                  sequence={[
-                    100,
-                    "",
-                    500,
-                    "Welcome to Webzen-bot! I'm an AI designed to assist you as a React developer. If you have any questions about technology, React, or any other aspect of web development, feel free to ask me. My goal is to help you better understand your projects and improve your user experience.",
-                    1000,
-                    "....",
-                  ]}
-                  repeat={Infinity}
-                  speed={40}
-                />
-              )}
-            </p>
-            <span>webzen</span>
-          </div>
-          <div className="message">
-            <p>
-             {}
-            </p>
-            <span>You</span>
-          </div>
+          {messages.map((msg, index) => (
+            <div key={index} className={msg.sender === "user" ? "message" : "bot_message"}>
+              <img src="./logo.png" alt="logo" />
+              <p>{msg.text}</p>
+              <span>{msg.sender}</span>
+            </div>
+          ))}
         </div>
         <div className="Frequently">
-          Frequently Asked Questions : {"  "}
+          Frequently Asked Questions: {" "}
           <div className="question-box">
-            <div className="question">What is React?</div>
-            <div className="question">
-              How Can Creating website for my bussines?
-            </div>
-            <div className="question">What is SEO ?</div>
+            {qaList.map((qa, index) => (
+              <div key={index} className="question" onClick={() => setInput(qa.question)}>
+                {qa.question}
+              </div>
+            ))}
           </div>
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Message WebZen-GPT....." />
-          <button>Send</button>
+          <input
+            type="text"
+            placeholder="Message WebZen-GPT....."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button onClick={handleSend}>Send</button>
         </div>
-        <MediumCircleOrang/>
-        <SmallCirclePink/>
+        <MediumCircleOrang />
+        <SmallCirclePink />
       </div>
-      
     </motion.div>
   );
 };
